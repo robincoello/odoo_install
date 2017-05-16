@@ -88,7 +88,7 @@ CREATE DATABASE midb owner miusuario;
 
 Esto nos regresa al prompt de postgres $.
 ```
-$ psql -U miusuario -h localhost -d midb -W
+psql -U miusuario -h localhost -d midb -W
 ```
 
 Contraseña para usuario miusuario:
