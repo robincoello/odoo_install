@@ -56,14 +56,9 @@ sudo systemctl start postgresql ; systemctl enable postgresql
 Es momento de iniciar sesión en postgresql para saber si todo está bien, probar (T- test).
 
 ```
-
-$ sudo -s``
-# su – postgres
-
-
-
-
-$ psql
+$ sudo -s
+su – postgres
+psql
 ```
 
 psql (9.5.6)
@@ -82,10 +77,9 @@ CREATE DATABASE midb owner miusuario;
 
 
 #\q
-```
 
 Esto nos regresa al prompt de postgres $.
-
+```
 $ psql -U miusuario -h localhost -d midb -W
 ```
 
@@ -100,13 +94,15 @@ Ahora es momento de instalar Odoo, agregando el repositorio a nuestro server, (�
 
 
 ```
-sudo dnf config-manager  –add-repo=https://nightly.odoo.com/10.0/nightly/rpm/odoo.repo
+sudo dnf config-manager -add-repo=https://nightly.odoo.com/10.0/nightly/rpm/odoo.repo
 
 sudo dnf install -y odoo wkhtmltopdf python2-xlrd.noarch
 ```
 
 
-Al terminar la instalación y previo a iniciar a Odoo cómo servicio, debemos configurar los parámetros correspondientes, en /etc/odoo/odoo.conf. Cambie los valores con los datos que hemos generado de ROL en PostgreSQL en los pasos anteriores.
+Al terminar la instalación y previo a iniciar a Odoo cómo servicio, debemos configurar los parámetros correspondientes, en ```/etc/odoo/odoo.conf``` Cambie los valores con los datos que hemos generado de ROL en PostgreSQL en los pasos anteriores.
+
+```
 [options]
 ; This is the password that allows database operations:
 ; admin_passwd = admin
@@ -115,13 +111,23 @@ db_port = 5432 <– Puerto de PostgreSQL.
 db_user = miusuario <–Rol que creamos dentro de PostgreSQL.
 db_password =  m1passw0rd <– Contraseña asiganda al rol que generamos en los pasos anteriores para el rol.
 addons_path = /usr/lib/python2.7/site-packages/odoo/addons
+```
+
 
 Es momento de iniciar Odoo.
 
-$ sudo systemctl start odoo.service
+
+```
+sudo systemctl start odoo.service
+```
+
+
 Consultemos si el servicio está activo.
 
-$ sudo systemctl status odoo.service
+```
+sudo systemctl status odoo.service
+```
+
 ● odoo.service – Odoo Open Source ERP and CRM
 Loaded: loaded (/usr/lib/systemd/system/odoo.service; disabled; vendor preset: disabled)
 Active: active (running) since dom 2017-03-12 18:53:08 CST; 5s ago <– active (running) indica que el servicio esta OK.
@@ -134,28 +140,43 @@ mar 12 18:53:08 camila.larenata.com systemd[1]: Started Odoo Open Source ERP and
 
 Consultemos que los puertos estén activos.
 
-$ sudo ss -atun | grep 8069
+```
+sudo ss -atun | grep 8069
+```
+
 
 tcp    LISTEN     0      128       *:8069                  *:*
 Nos interesa encontrar el puerto  8069/tcp que es el Odoo.
 
 Ahora agregamos el puerto a nuestro firewall.
 
-$ sudo firewall-cmd –add-port=8069/tcp
+```
+sudo firewall-cmd –add-port=8069/tcp
+```
 success
 
-$ sudo firewall-cmd –add-port=8069/tcp –permanent
+```
+sudo firewall-cmd –add-port=8069/tcp –permanent
+```
 success
 
 En otra terminal puede supervisar la actividad de Odoo,
 
-$ tailf /var/log/odoo/odoo-server.log
+```
+tailf /var/log/odoo/odoo-server.log
+```
 
 …Salida
 
 2017-03-13 01:01:03,625 17050 INFO camila odoo.modules.loading: loading 12 modules…
 
-Probamos en nuestro navegador preferido la dirección ip:8069 (Ej. 192.168.122.241:8069) y deberá encontrarse la página de Odoo.
+# Go
+Probamos en nuestro navegador preferido la dirección ip:8069 
+* 0.0.0.0:8069
+* localhost:8069
+* 192.168.122.241:8069
+
+y deberá encontrarse la página de Odoo.
 
 Ahora debemos configurar el contraseña principal. Seleccione una contraseña fuerte pero que pueda recordar, ya que está será para gestión de Odoo.
 
