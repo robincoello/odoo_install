@@ -11,13 +11,18 @@ sudo dnf upgrade -y
 sudo dnf install postgresql-server postgresql-contrib -y
 ```
 
-Una vez que termina la instalación (I) de PostgreSQL Server, procedemos a la configuración (S-setup), (“- -“) antes de initdb.
+Una vez que termina la instalación (I) de PostgreSQL Server, procedemos a la configuración (S-setup)
 
 ```
-sudo postgresql-setup -initdb
+sudo postgresql-setup --initdb
 ```
 
-Aunque la configuración por omisión del servicio permite se ejecute correctamente, es recomendable modificar unas líneas del archivo de configuración de /var/lib/pgsql/data/postgresql.conf:
+Aunque la configuración por omisión del servicio permite se ejecute correctamente, es recomendable modificar unas líneas del archivo de configuración de 
+
+```
+sudo nano /var/lib/pgsql/data/postgresql.conf
+```
+
 
 Especificar la dirección (es), desde se puede acceder al servicio, para nuestro caso el servicio sólo atenderá conexiones de manera local.
 
@@ -31,7 +36,14 @@ Y en el puerto 5432, por lo que dichas líneas no les deberá preceder el símbo
 port = 5432
 ```
 
-También realizaremos cambios en ```/var/lib/pgsql/data/pg_hba.conf```, busqué dentro del archivo y modifique para que las líneas queden de la siguiente manera.
+También realizaremos cambios en 
+
+```
+sudo nano /var/lib/pgsql/data/pg_hba.conf
+```
+
+busqué dentro del archivo y modifique para que las líneas queden de la siguiente manera.
+
 ```
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
@@ -67,12 +79,12 @@ Ahora vamos a generar una base de datos.
 ```
 CREATE ROLE miusuario WITH LOGIN CREATEDB PASSWORD ‘m1passw0rd’;
 
-
 CREATE DATABASE midb owner miusuario;
+
+\q
+
 ```
 
-
-#\q
 
 Esto nos regresa al prompt de postgres $.
 ```
@@ -96,16 +108,22 @@ sudo dnf install -y odoo wkhtmltopdf python2-xlrd.noarch
 ```
 
 
-Al terminar la instalación y previo a iniciar a Odoo cómo servicio, debemos configurar los parámetros correspondientes, en ```/etc/odoo/odoo.conf``` Cambie los valores con los datos que hemos generado de ROL en PostgreSQL en los pasos anteriores.
+Al terminar la instalación y previo a iniciar a Odoo cómo servicio, debemos configurar los parámetros correspondientes, en 
+
+```
+sudo nano /etc/odoo/odoo.conf
+``` 
+
+Cambie los valores con los datos que hemos generado de ROL en PostgreSQL en los pasos anteriores.
 
 ```
 [options]
 ; This is the password that allows database operations:
 ; admin_passwd = admin
-db_host = localhost <– La BD se encuentra en el mismo servidor.
-db_port = 5432 <– Puerto de PostgreSQL.
-db_user = miusuario <–Rol que creamos dentro de PostgreSQL.
-db_password =  m1passw0rd <– Contraseña asiganda al rol que generamos en los pasos anteriores para el rol.
+db_host = localhost # La BD se encuentra en el mismo servidor.
+db_port = 5432 # Puerto de PostgreSQL.
+db_user = miusuario # Rol que creamos dentro de PostgreSQL.
+db_password =  m1passw0rd # Contraseña asiganda al rol que generamos en los pasos anteriores para el rol.
 addons_path = /usr/lib/python2.7/site-packages/odoo/addons
 ```
 
