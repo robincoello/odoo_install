@@ -200,8 +200,12 @@ Esta base de datos nos permitirá usar los módulos de Odoo, mi humilde recomend
 
 Pues bien ahora sigue lo más emocionante, llevarlo a la realidad.
 
+```
+sudo dnf install phpPgAdmin
+```
+
 http://localhost/phpPgAdmin/
 
-Geston odoo
-http://0.0.0.0:8069/
+
+
 
