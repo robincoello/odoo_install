@@ -1,8 +1,4 @@
 
-larenata.com
-Instalando Odoo 10 en Fedora 25 con PostgreSQL 9.5.
-12 Marzo, 2017
-
 Odoo es un Software de gestión para empresas, clasificado como ERP (Enterprise Resource Planning, Planificación de Recursos Empresariales) y CRM (Customer Relationship Managemen, Gestión de Relaciones con Clientes), este tipo de Software es indispensable para todos los negocios que tienen como meta la permanencia en el mercado y la prosperidad o crecimiento en todos los aspectos.
 
 Partimos de que ya tienen instalado Fedora Server, con la configuración de software estándar y que cuenta con las últimas actualizaciones.
@@ -185,3 +181,9 @@ Ahora vamos a crear la base de datos para nuestro negocio.
 Esta base de datos nos permitirá usar los módulos de Odoo, mi humilde recomendación es instalarlos cómo los vayamos necesitando, por lo que deberán primero leer acerca de cada uno de ellos, aquí la documentación.
 
 Pues bien ahora sigue lo más emocionante, llevarlo a la realidad.
+
+http://localhost/phpPgAdmin/
+
+Geston odoo
+http://0.0.0.0:8069/
+
