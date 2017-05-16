@@ -18,7 +18,7 @@ sudo dnf install postgresql-server postgresql-contrib -y
 Una vez que termina la instalación (I) de PostgreSQL Server, procedemos a la configuración (S-setup), (“- -“) antes de initdb.
 
 ```
-sudo postgresql-setup –initdb
+sudo postgresql-setup -initdb
 ```
 
 Aunque la configuración por omisión del servicio permite se ejecute correctamente, es recomendable modificar unas líneas del archivo de configuración de /var/lib/pgsql/data/postgresql.conf:
@@ -75,17 +75,17 @@ Ahora vamos a generar una base de datos.
 
 ```
 CREATE ROLE miusuario WITH LOGIN CREATEDB PASSWORD ‘m1passw0rd’;
-```
+
 
 CREATE DATABASE midb owner miusuario;
 ```
 
 
 #\q
+```
 
 Esto nos regresa al prompt de postgres $.
 
-```
 $ psql -U miusuario -h localhost -d midb -W
 ```
 
