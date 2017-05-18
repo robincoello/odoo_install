@@ -17,7 +17,7 @@ apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
 
 exit
 
-sudo service odoo restart
+sudo service odoo start
 
 ```
 
