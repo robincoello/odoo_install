@@ -37,7 +37,7 @@ now
 
 ```
 sudo service odoo start
-service postgresql start
+sudo service postgresql start
 sudo service apache2 start
 
 ```
