@@ -7,9 +7,9 @@ Now
 
 ```
 
-wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
-echo "deb http://nightly.odoo.com/10.0/nightly/deb/ ./" >> /etc/apt/sources.list
-apt-get update && apt-get install odoo
+ wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+ echo "deb http://nightly.odoo.com/10.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+ apt-get update && apt-get install odoo
 
 apt-get install postgresql postgresql-client -y
 apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
