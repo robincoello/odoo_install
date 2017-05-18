@@ -50,3 +50,15 @@ http://0.0.0.0:8069
 http://localhost/phppgadmin/
 
 
+# Remove
+
+sudo apt-get remove postgresql postgresql-client -y
+sudo apt-get remove phppgadmin pgadmin3 wkhtmltopdf -y
+sudo apt-get remove odoo -y
+rm -r /etc/odoo/
+
+rm -R /var/lib/postgresql/
+
+
+
+
