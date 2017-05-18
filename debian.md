@@ -23,6 +23,6 @@ sudo service odoo restart
 
 now open in your broswer 
 
-0.0.0.0:8069
+http://0.0.0.0:8069
 
 
