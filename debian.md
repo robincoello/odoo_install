@@ -1,5 +1,4 @@
-# Install in Debian
-
+# install odoo debian 
 ```
 su -
 ```
@@ -14,15 +13,32 @@ apt-get update && apt-get install odoo
 
 apt-get install postgresql postgresql-server  postgresql-client -y
 apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
+
 exit
 ```
 
-Check if you you exit from root user! 
+now edit 
+```
+sudo nano /etc/odoo/odoo.conf
+```
+Like this
+
+```
+[options]
+; This is the password that allows database operations:
+; admin_passwd = admin
+db_host = False
+db_port = False
+db_user = odoo
+db_password = odoo
+addons_path = /usr/lib/python2.7/dist-packages/odoo/addons
+```
+now
 
 ```
 sudo service odoo start
 service postgresql start
-sudo service apache2 restart
+sudo service apache2 start
 
 ```
 
