@@ -24,7 +24,10 @@ sudo service apache2 restart
 ```
 
 now open in your broswer 
-
+## Oddo
 http://0.0.0.0:8069
+
+## phppgadmin 
+http://localhost/phppgadmin/
 
 
