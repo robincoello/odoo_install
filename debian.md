@@ -19,7 +19,7 @@ exit
 
 sudo service odoo start
 service postgresql start
-sudo service apache2 start
+sudo service apache2 restart
 
 ```
 
