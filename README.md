@@ -1,5 +1,6 @@
 # Odoo install Fedora 24
 
+for debian here [debian.md](debian.md)
 
 Odoo es un Software de gestión para empresas, clasificado como ERP (Enterprise Resource Planning, Planificación de Recursos Empresariales) y CRM (Customer Relationship Managemen, Gestión de Relaciones con Clientes), este tipo de Software es indispensable para todos los negocios que tienen como meta la permanencia en el mercado y la prosperidad o crecimiento en todos los aspectos.
 
