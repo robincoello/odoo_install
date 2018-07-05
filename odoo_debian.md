@@ -8,6 +8,45 @@ Linux debian 4.9.0-3-amd64 #1 SMP Debian 4.9.30-2+deb9u3 (2017-08-06) x86_64 GNU
 https://www.odoo.com/documentation/9.0/setup/install.html
 
 ## Paso a paso
+* Agregamos al usuario normal con derechos de sudouser
+
+```
+usermod -aG sudo <username>
+```
+
+* Instalamos ssh 
+
+```
+sudo apt-get install ssh
+
+```
+Asi podemos conectarnos a distancia al servidor si asi o deseamos
+
+Ahora la instalacion propia de odoo
+
+```
+# wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+# echo "deb http://nightly.odoo.com/9.0/nightly/deb/ ./" >> /etc/apt/sources.list
+# apt-get update && apt-get install odoo
+```
+
+Esto nos da el error sieguiente
+```
+Certains paquets ne peuvent être installés. Ceci peut signifier
+que vous avez demandé l'impossible, ou bien, si vous utilisez
+la distribution unstable, que certains paquets n'ont pas encore
+été créés ou ne sont pas sortis d'Incoming.
+L'information suivante devrait vous aider à résoudre la situation : 
+
+Les paquets suivants contiennent des dépendances non satisfaites :
+ odoo : Dépend: python-pypdf mais il n'est pas installable
+        Recommande: antiword mais ne sera pas installé
+        Recommande: postgresql mais ne sera pas installé
+        Recommande: python-gevent mais ne sera pas installé
+        Recommande: poppler-utils mais ne sera pas installé
+E: Impossible de corriger les problèmes, des paquets défectueux sont en mode « garder en l'état ».
+
+```
 
 
 
