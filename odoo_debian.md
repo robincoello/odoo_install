@@ -47,7 +47,10 @@ Les paquets suivants contiennent des dépendances non satisfaites :
 E: Impossible de corriger les problèmes, des paquets défectueux sont en mode « garder en l'état ».
 
 ```
-
+Ahora solucionamos asi: 
+```
+apt-get install antiword python-gevent poppler-utils
+```
 
 
 
