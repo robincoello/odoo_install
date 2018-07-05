@@ -6,6 +6,11 @@ Linux debian 4.9.0-3-amd64 #1 SMP Debian 4.9.30-2+deb9u3 (2017-08-06) x86_64 GNU
 ## Manual usado
 https://www.odoo.com/documentation/11.0/setup/install.html
 
+## Paso a paso
+
+
+
+
 
 ## Soluciones a problemas: 
 https://github.com/odoo/odoo/issues/17002
