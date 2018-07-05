@@ -1,12 +1,14 @@
-# Odoo en Debian 
+# Odoo 9.0 en Debian 
+Instalar odoo 9 para despues hacer una actualizacion a las versiones superiores y ver si es factible
 
 ## Version de linux
 Linux debian 4.9.0-3-amd64 #1 SMP Debian 4.9.30-2+deb9u3 (2017-08-06) x86_64 GNU/Linux
 
 ## Manual usado
-https://www.odoo.com/documentation/11.0/setup/install.html
+https://www.odoo.com/documentation/9.0/setup/install.html
 
 ## Paso a paso
+
 
 
 
