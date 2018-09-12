@@ -92,12 +92,14 @@ CREATE DATABASE midb owner miusuario;
 Esto nos regresa al prompt de postgres $.
 ```
 psql -U miusuario -h localhost -d midb -W
-```
 
 Contraseña para usuario miusuario:
 psql (9.5.6)
 Digite «help» para obtener ayuda.
 midb=>
+
+```
+
 
 Esto es prueba de que nuestro PostgreSQL Server se encuentra saludable y funcionando.
 
@@ -105,10 +107,28 @@ Ahora es momento de instalar Odoo, agregando el repositorio a nuestro server, (�
 
 
 ```
-sudo dnf config-manager -add-repo=https://nightly.odoo.com/10.0/nightly/rpm/odoo.repo
+ sudo dnf config-manager --add-repo=https://nightly.odoo.com/11.0/nightly/rpm/odoo.repo
+ sudo dnf install -y odoo
+ sudo systemctl enable odoo
+ sudo systemctl start odoo
+```
 
+Otras versiones
+
+
+```
+sudo dnf config-manager --add-repo=https://nightly.odoo.com/10.0/nightly/rpm/odoo.repo
+```
+
+
+```
 sudo dnf install -y odoo wkhtmltopdf python2-xlrd.noarch
 ```
+
+
+
+
+
 
 
 Al terminar la instalación y previo a iniciar a Odoo cómo servicio, debemos configurar los parámetros correspondientes, en 
