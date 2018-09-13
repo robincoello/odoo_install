@@ -52,3 +52,10 @@ Llenamos el formulario con los datos nuestros, y listo
 ### phppgadmin
 
 http://192.168.122.146/phppgadmin/
+
+Por defecto solo se puede ejecutar en localhost, para correjir esto haz lo siguiente:
+https://www.postgresql.org/docs/9.6/static/auth-methods.html
+
+
+
+
