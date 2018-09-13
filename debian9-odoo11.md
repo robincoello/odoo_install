@@ -11,3 +11,22 @@ Conectarse al servidor
 ```
 ssh user@192.168.122.146
 ```
+
+Seguiremos las instrucciones base de 
+
+https://www.odoo.com/documentation/11.0/setup/install.html
+
+Preparamos:
+```
+sudo apt-get install postgresql -y
+
+sudo apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
+
+```
+
+Ahora para ODOO
+```
+sudo wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+sudo echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+sudo apt-get update && apt-get install odoo
+```
