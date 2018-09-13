@@ -36,3 +36,8 @@ Para estar seguros, actualizamos
 ```
 apt-get upgrade
 ```
+
+Instalamos un modulo de python necesario
+```
+sudo pip3 install num2words
+```
