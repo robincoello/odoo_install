@@ -1,4 +1,4 @@
-# Odoo 11 en debia 9
+# Odoo 11 en debian 9
 
 En una maquina recien instalada
 
