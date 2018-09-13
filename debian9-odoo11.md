@@ -48,3 +48,7 @@ Ahora entramos en nuestra instalacion de ODOO
 http://192.168.122.146:8069
 
 Llenamos el formulario con los datos nuestros, y listo 
+
+### phppgadmin
+
+http://192.168.122.146/phppgadmin/
