@@ -26,7 +26,9 @@ sudo apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
 
 Ahora para ODOO
 ```
-sudo wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
-sudo echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
-sudo apt-get update && apt-get install odoo
+su
+
+wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+apt-get update && apt-get install odoo
 ```
