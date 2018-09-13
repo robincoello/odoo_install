@@ -3,6 +3,9 @@
 En una maquina recien instalada
 
 Instalar net-tools
+```
+sudo apt-get install net-tools
+```
 
 Conectarse al servidor 
 ```
