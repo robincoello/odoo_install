@@ -1,4 +1,5 @@
 # Odoo 11 en debian 9
+Odoo 11.0-20180912 (Community Edition)
 
 En una maquina recien instalada
 
