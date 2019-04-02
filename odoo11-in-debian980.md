@@ -3,7 +3,7 @@
 We need install debian first
 
 
-## Donwload Debian here: 
+## Download Debian here: 
 
 ```
 https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.8.0-amd64-netinst.iso
@@ -56,7 +56,9 @@ Odoo needs a PostgreSQL server to run properly. The default configuration for th
 
 ```
  apt-get install postgresql -y
+```
 
+```
  apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
 
 ```
@@ -67,7 +69,9 @@ Odoo S.A. provides a repository that can be used with Debian and Ubuntu distribu
 
 ```
   wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+  
   echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+  
   apt-get update && apt-get install odoo -y
 
 ```
