@@ -1,4 +1,4 @@
-# Odoo in Debian 9.8.0
+# Odoo 11 in Debian 9.8.0
 
 We need install debian first
 
