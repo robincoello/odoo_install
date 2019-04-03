@@ -1,60 +1,100 @@
-# Odoo 12 en debian 9
-Odoo 12 (Community Edition)
+# Odoo 12 in Debian 9.8.0
 
-En una maquina recien instalada
+We need install debian first
 
-Instalar net-tools
-```
-sudo apt-get install net-tools
-```
 
-Conectarse al servidor 
-```
-ssh user@192.168.122.146
-```
-
-Seguiremos las instrucciones base de 
-
-https://www.odoo.com/documentation/11.0/setup/install.html
-
-Preparamos:
-```
-sudo apt-get install postgresql -y
-
-sudo apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
+## Download Debian here: 
 
 ```
-
-Ahora para ODOO
+https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.8.0-amd64-netinst.iso
 ```
-su
 
+user: pass
+
+root :  linux
+
+user : user
+
+
+Now, install sudo module
+
+```
+su -
+
+apt-get install sudo -y 
+```
+
+Now add user a sudo group
+
+```
+usermod -aG sudo user
+```
+
+
+Install SSH if you need conecte from other machine
+
+```
+ apt-get install ssh  
+```
+
+
+## ODOO
+
+https://www.odoo.com/documentation/12.0/setup/install.html
+
+We want the version 12 and Packaged installers
+
+These packages automatically set up all dependencies (for the Community version), but may be difficult to keep up-to-date.
+
+### Prepare
+
+Odoo needs a PostgreSQL server to run properly. The default configuration for the Odoo ‘deb’ package is to use the PostgreSQL server on the same host as your Odoo instance. Execute the following command as root in order to install PostgreSQL server :
+
+```
+ apt-get install postgresql -y
+```
+
+```
+ apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
+
+```
+
+### Repository
+
+Odoo S.A. provides a repository that can be used with Debian and Ubuntu distributions. It can be used to install Odoo Community Edition by executing the following commands as root:
+
+```
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
-echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
-apt-get update && apt-get install odoo
-```
-Para estar seguros, actualizamos
-```
-apt-get upgrade
-```
 
-Instalamos un modulo de python necesario
+echo "deb http://nightly.odoo.com/12.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+
+apt-get update && apt-get install odoo-y
+
+```
+You can go to ODOO web 
+
+http://1270.0.1:8069
+
+### phppgadmin
+
+http://127.0.0.1/phppgadmin/
+
+
+You can then use the usual apt-get upgrade command to keep your installation up-to-date.
+
+
+Others modules 
 ```
 sudo pip3 install num2words
 ```
 
-Ahora entramos en nuestra instalacion de ODOO
 
-http://192.168.122.146:8069
 
-Llenamos el formulario con los datos nuestros, y listo 
 
-### phppgadmin
 
-http://192.168.122.146/phppgadmin/
 
-Por defecto solo se puede ejecutar en localhost, para correjir esto haz lo siguiente:
-https://www.postgresql.org/docs/9.6/static/auth-methods.html
+
+
 
 
 
