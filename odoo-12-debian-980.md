@@ -30,6 +30,8 @@ Now add user a sudo group
 usermod -aG sudo user
 ```
 
+Now restart the machine
+
 
 Install SSH if you need conecte from other machine
 
