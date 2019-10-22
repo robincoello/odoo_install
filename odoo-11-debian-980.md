@@ -36,7 +36,7 @@ reboot
 Install SSH if you need conecte from other machine
 
 ```
- apt-get install ssh  
+ sudo apt-get install ssh  
 ```
 
 
@@ -53,11 +53,11 @@ These packages automatically set up all dependencies (for the Community version)
 Odoo needs a PostgreSQL server to run properly. The default configuration for the Odoo ‘deb’ package is to use the PostgreSQL server on the same host as your Odoo instance. Execute the following command as root in order to install PostgreSQL server :
 
 ```
- apt-get install postgresql -y
+ sudo apt-get install postgresql -y
 ```
 
 ```
- apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
+ sudo apt-get install phppgadmin pgadmin3 wkhtmltopdf -y
 
 ```
 
@@ -66,11 +66,11 @@ Odoo needs a PostgreSQL server to run properly. The default configuration for th
 Odoo S.A. provides a repository that can be used with Debian and Ubuntu distributions. It can be used to install Odoo Community Edition by executing the following commands as root:
 
 ```
-  wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+  sudo wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
   
-  echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+  sudo echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
   
-  apt-get update && apt-get install odoo -y
+  sudo apt-get update && apt-get install odoo -y
 
 ```
 You can go to ODOO web 
